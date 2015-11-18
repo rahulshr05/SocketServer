@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Messenger</title>
+		<script type="text/javascript">
+			var ws = new WebSocket('ws://localhost:4576?SessionId=1000&userid=rahul&usertype=tutor', 'echo-protocol');
+
+ 			function sendMessage(){
+    			var message = document.getElementById('message').value;
+    			ws.send(message);
+			}
+			ws.addEventListener("message", function(e) {
+    			var msg = e.data;
+    			document.getElementById('chatlog').innerHTML += '<br>' + msg;
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div id="chatlog"></div>
+		<input type="text" value="" id="message"></input>
+		<input type="button" value="send" onclick="javascript:sendMessage()"></input>
+	</body>
+</html>

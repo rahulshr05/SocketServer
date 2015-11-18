@@ -1,0 +1,27 @@
+{
+  "name": "socketserverwisechalk",
+  "version": "1.0.0",
+  "description": "WebSocket backend server for WiseChalk's Whiteboard and Chat communication",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:rahulshr/socketserverwisechalk.git"
+  },
+  "author": "Rahul Shrivastava <rahul.shrivastava@edflight.com>",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.2",
+    "mongodb": "^2.0.28",
+    "mongoose": "^4.0.2",
+    "request": "^2.55.0",
+    "websocket": "^1.0.18",
+    "winston": "^1.0.0"
+  }
+}

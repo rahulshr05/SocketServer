@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Messenger</title>
+		<script type="text/javascript">
+			var ws = new WebSocket('ws://ec2-54-213-212-157.us-west-2.compute.amazonaws.com:4576?SessionId=2000', 'echo-protocol');
+
+ 			function sendMessage(){
+    			var message = document.getElementById('message').value;
+    			ws.send(message);
+			}
+			ws.addEventListener("message", function(e) {
+    			var msg = e.data;
+    			document.getElementById('chatlog').innerHTML += '<br>' + msg;
+			});
+		</script>
+
+	</head>
+
+	<body>
+		<div id="chatlog"></div>
+		<input type="text" value="" id="message"></input>
+		<input type="button" value="send" onclick="javascript:sendMessage()"></input>
+	</body>
+</html>
